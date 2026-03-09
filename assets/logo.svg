@@ -1,0 +1,21 @@
+<svg width="440" height="80" viewBox="0 0 440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Anything Labs Icon -->
+  <g transform="translate(5, 2) scale(0.58)" stroke="#111827" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Upper-left diagonal through center to lower-right, bending to bottom -->
+    <path d="M 12,10 L 70,68 L 50,100"/>
+    <!-- Upper-right diagonal through center to lower-left, bending to bottom -->
+    <path d="M 88,10 L 30,68 L 50,100"/>
+    <!-- Upper horizontal bar -->
+    <line x1="38" y1="60" x2="62" y2="60"/>
+    <!-- Lower horizontal bar -->
+    <line x1="33" y1="73" x2="67" y2="73"/>
+    <!-- Upper-left chevron -->
+    <polyline points="4,24 12,10 24,5"/>
+    <!-- Upper-right chevron -->
+    <polyline points="76,5 88,10 96,24"/>
+    <!-- Bottom chevron -->
+    <polyline points="36,118 50,106 64,118"/>
+  </g>
+  <!-- Text: Anything Labs -->
+  <text x="75" y="52" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="36" fill="#111827" letter-spacing="-0.5">Anything Labs</text>
+</svg>
