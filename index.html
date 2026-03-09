@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UUSD - Anything Labs | AI Native Stablecoin</title>
-    <meta name="description" content="UUSD is the settlement currency for AI agents, applications, and global on-chain commerce.">
-    <meta name="keywords" content="UUSD, stablecoin, AI agents, settlement, cryptocurrency, programmable money, Anything Labs">
+    <title>UUSD - Unity USD | Settlement for Humans and AI</title>
+    <meta name="description" content="UUSD is a USD-pegged settlement unit designed for both humans and autonomous agents.">
+    <meta name="keywords" content="UUSD, stablecoin, AI agents, settlement, cryptocurrency, programmable money">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="UUSD - Powering the AI Agent Economy">
-    <meta property="og:description" content="UUSD is the settlement currency for AI agents, applications, and global on-chain commerce.">
+    <meta property="og:title" content="UUSD - Settlement for Humans and AI">
+    <meta property="og:description" content="A USD-pegged settlement unit designed for both humans and autonomous agents.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uusd.ai">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="UUSD - Powering the AI Agent Economy">
-    <meta name="twitter:description" content="UUSD is the settlement currency for AI agents, applications, and global on-chain commerce.">
+    <meta name="twitter:title" content="UUSD - Settlement for Humans and AI">
+    <meta name="twitter:description" content="A USD-pegged settlement unit designed for both humans and autonomous agents">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo32.svg?v=20260309">
+    <!-- Favicon (cache-busted) -->
+    <!-- Note: favicons are often cached aggressively; changing URL helps avoid requiring hard refresh -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo32.svg?v=20260205">
     <link rel="icon" type="image/png" href="assets/logo.png?v=20260205">
     <link rel="apple-touch-icon" href="assets/logo.png?v=20260205">
 
@@ -29,30 +30,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
             <a href="/" class="logo">
-                <img src="assets/logo.svg?v=20260309" alt="Anything Labs">
+                <img src="assets/logo.svg?v=20260205" alt="Unity USD">
             </a>
 
             <ul class="nav-links">
-                <li><a href="#uusd" data-i18n="nav.uusd">UUSD</a></li>
-                <li><a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a></li>
-                <li><a href="#security" data-i18n="nav.security">Security</a></li>
-                <li><a href="#developers" data-i18n="nav.developers">Developers</a></li>
-                <li><a href="https://uusd.ai/whitepaper.pdf" target="_blank" data-i18n="nav.whitepaper_nav">Whitepaper</a></li>
+                <li><a href="#why">Why</a></li>
+                <li><a href="#what">What</a></li>
+                <li><a href="#contract">Contract</a></li>
+                <li><a href="#swap">Get UUSD</a></li>
+                <li><a href="https://uusd.ai/whitepaper.pdf" target="_blank">WHITEPAPER</a></li>
             </ul>
 
             <div class="nav-cta">
-                <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="zh">中文</button>
-                </div>
-                <a href="#swap" class="btn btn-primary btn-sm" data-i18n="nav.get_uusd">Get UUSD</a>
+                <a href="#swap" class="btn btn-primary btn-sm">Get UUSD</a>
             </div>
 
             <div class="menu-toggle">
@@ -66,258 +63,158 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="corner-decoration corner-tl"></div>
+            <div class="corner-decoration corner-tr"></div>
+            <div class="corner-decoration corner-bl"></div>
+            <div class="corner-decoration corner-br"></div>
+
+            <div class="hero-content">
+                <h1>Economic actors are<br>no longer <span class="highlight">just humans</span></h1>
+
+                <p class="hero-subtitle">
+                    AI agents now transact, pay, and settle value autonomously — yet money was never designed for them. UUSD is a USD-pegged settlement unit designed for both humans and AI agents.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#swap" class="btn btn-primary">Get UUSD</a>
+                    <a href="https://uusd.ai/whitepaper.pdf" target="_blank" class="btn btn-secondary">WHITEPAPER</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section -->
+        <section class="why-section" id="why">
             <div class="container">
-                <div class="hero-content">
-                    <h1><span data-i18n="hero.title_prefix">Powering the </span><span class="highlight" data-i18n="hero.title_highlight">AI Agent Economy</span></h1>
-                    <p class="hero-subtitle" data-i18n="hero.subtitle">
-                        UUSD is the settlement currency for AI agents, applications, and global on-chain commerce.
-                    </p>
-                    <p class="hero-definition" data-i18n="hero.definition">
-                        Built for the next generation of autonomous economies.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#uusd" class="btn btn-primary" data-i18n="hero.btn_learn">Learn about UUSD</a>
-                        <a href="#ecosystem" class="btn btn-secondary" data-i18n="hero.btn_ecosystem">View Ecosystem</a>
+                <div class="section-header fade-in">
+                    <h2>Why Settlement Must Change</h2>
+                </div>
+
+                <div class="why-content fade-in">
+                    <div class="why-item">
+                        <p>Traditional money systems assume humans as the only economic actors.</p>
+                    </div>
+                    <div class="why-item">
+                        <p>Accounts, approvals, gas payments, and manual operations do not fit autonomous agents.</p>
+                    </div>
+                    <div class="why-item">
+                        <p>As AI agents participate directly in economic activity, settlement layers must adapt.</p>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <canvas id="hero-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- What UUSD Is Section -->
+        <section class="what-section" id="what">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What UUSD Is</h2>
+                </div>
+
+                <div class="what-content fade-in">
+                    <div class="what-item">
+                        <p>UUSD is a stable settlement unit.</p>
+                    </div>
+                    <div class="what-item">
+                        <p>It is designed to be used by both humans and autonomous agents.</p>
+                    </div>
+                    <div class="what-item">
+                        <p>It integrates with on-chain applications and programmable systems.</p>
+                    </div>
+                    <div class="what-item">
+                        <p>UUSD maintains a stable value relative to USD and is issued against equivalent reserves.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Partners / Trust Section -->
-        <section class="partners-section fade-in">
+        <!-- Use Cases Section -->
+        <section class="features" id="features">
             <div class="container">
-                <div class="section-header">
-                    <p data-i18n="partners.tagline">Trusted by leading infrastructure partners</p>
+                <div class="section-header fade-in">
+                    <h2>Example Use Cases</h2>
                 </div>
-                <div class="partners-grid">
-                    <a href="https://www.bnbchain.org" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0l4 4-8 8-4-4zm12 12l4 4-4 4-4-4zm-24 0l4 4-4 4-4-4zm12 12l4 4-4 4-4-4zm0-8l4-4 4 4-4 4-4-4z"/></svg>
-                        <span>BNB Chain</span>
-                    </a>
-                    <a href="https://pancakeswap.finance" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm-2.5 7a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm5 0a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM16 25c-4.418 0-8-2.686-8-6h16c0 3.314-3.582 6-8 6z"/></svg>
-                        <span>PancakeSwap</span>
-                    </a>
-                    <a href="https://web3.bitget.com" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M6 8l10 6v12l-10-6V8zm20 0l-10 6v12l10-6V8zM16 2l10 6-10 6-10-6 10-6z"/></svg>
-                        <span>Bitget Wallet</span>
-                    </a>
-                    <a href="https://uxuy.com" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M4 6l6 10-6 10h4l4-7 4 7h4l-6-10 6-10h-4l-4 7-4-7H4zm16 0v20h4V6h-4z"/></svg>
-                        <span>UXUY</span>
-                    </a>
-                    <a href="https://gmgn.ai" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="8" fill="white"/><circle cx="16" cy="16" r="4" fill="currentColor"/></svg>
-                        <span>GMGN</span>
-                    </a>
-                    <a href="https://flap.sh" target="_blank" class="partner-logo">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4c-3 0-6 2-8 5s-3 7-2 10l10-5 10 5c1-3 0-7-2-10s-5-5-8-5zm-6 18l6-3 6 3c-1 2-3 4-6 4s-5-2-6-4z"/></svg>
-                        <span>Flap</span>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- AI Economy Section -->
-        <section class="ai-economy-section fade-in" id="developers">
-            <div class="container">
-                <div class="ai-economy-content">
-                    <h2 data-i18n="ai_economy.title">The Rise of AI Agent Economy</h2>
-                    <p data-i18n="ai_economy.p1">
-                        Autonomous AI agents are becoming independent economic actors. They negotiate contracts,
-                        execute transactions, allocate capital, and settle payments without human intervention.
-                    </p>
-                    <p data-i18n="ai_economy.p2">
-                        Traditional payment rails were built for humans -- with manual approvals, slow settlement
-                        times, and centralized gatekeepers. The AI agent economy demands programmable, instant,
-                        and permissionless settlement. UUSD is purpose-built for this new paradigm.
-                    </p>
-                </div>
-                <div class="ai-economy-visual">
-                    <span data-i18n="ai_economy.visual">AI Agent Economy Diagram</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- UUSD Section -->
-        <section class="uusd-section fade-in" id="uusd">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="uusd.title">UUSD -- AI Native Stablecoin</h2>
-                    <p data-i18n="uusd.subtitle">A USD-pegged stablecoin designed for AI-driven financial systems.</p>
-                </div>
-                <div class="uusd-grid">
-                    <div class="uusd-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                                 <circle cx="12" cy="5" r="3"/>
                                 <path d="M12 8v3"/>
                             </svg>
                         </div>
-                        <h3 data-i18n="uusd.card1_title">AI Payments</h3>
-                        <p data-i18n="uusd.card1_desc">Instant, programmable payments between AI agents. Micro-transactions for API calls, compute resources, and autonomous services.</p>
+                        <h3>Autonomous Agent Settlement</h3>
+                        <p>AI agents hold assets, execute payments, and participate in economic activities without human intermediaries.</p>
                     </div>
-                    <div class="uusd-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                             </svg>
                         </div>
-                        <h3 data-i18n="uusd.card2_title">AI Trading</h3>
-                        <p data-i18n="uusd.card2_desc">Optimized for high-frequency, agent-driven trading strategies across decentralized exchanges and liquidity pools.</p>
+                        <h3>Application and API Payments</h3>
+                        <p>Granular transactions for API calls, computing resources, and algorithmic services.</p>
                     </div>
-                    <div class="uusd-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Authorization-Based Transfers</h3>
+                        <p>EIP-2612 Permit and EIP-3009 support for meta-transactions without direct gas costs.</p>
+                    </div>
+
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                             </svg>
                         </div>
-                        <h3 data-i18n="uusd.card3_title">Global Settlement</h3>
-                        <p data-i18n="uusd.card3_desc">Cross-chain settlement across BSC, Ethereum, Base, and all EVM-compatible networks with deterministic contract addresses.</p>
+                        <h3>Multi-Chain Settlement</h3>
+                        <p>Same contract address across BSC, Ethereum, Base, and all EVM-compatible chains.</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- TVL / Growth Section -->
-        <section class="tvl-section fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="tvl.title">UUSD Network Growth</h2>
-                </div>
-                <div class="tvl-stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">--</div>
-                        <div class="stat-label" data-i18n="tvl.stat1_label">Total Value Locked</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">--</div>
-                        <div class="stat-label" data-i18n="tvl.stat2_label">Transactions</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">--</div>
-                        <div class="stat-label" data-i18n="tvl.stat3_label">Integrations</div>
-                    </div>
-                </div>
-                <div class="tvl-chart-area" data-i18n="tvl.chart">
-                    Growth Chart
-                </div>
-            </div>
-        </section>
-
-        <!-- Security Section -->
-        <section class="security-section fade-in" id="security">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="security.title">Built with Security First</h2>
-                </div>
-                <div class="security-grid">
-                    <div class="security-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <path d="M9 12l2 2 4-4"/>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
                             </svg>
                         </div>
-                        <h3 data-i18n="security.card1_title">Smart Contracts</h3>
-                        <p data-i18n="security.card1_desc">Thoroughly tested and verified smart contracts deployed via CREATE2 for deterministic addresses across all EVM chains.</p>
+                        <h3>Programmable Transactions</h3>
+                        <p>Composable with smart contracts and on-chain logic for automated workflows.</p>
                     </div>
-                    <div class="security-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                             </svg>
                         </div>
-                        <h3 data-i18n="security.card2_title">Audited Protocol</h3>
-                        <p data-i18n="security.card2_desc">Comprehensive security audits with role-based access control, freeze capabilities, and pause mechanisms for regulated use cases.</p>
+                        <h3>Compliance-Ready Infrastructure</h3>
+                        <p>Role-based access control, freeze capabilities, and pause mechanisms for regulated use cases.</p>
                     </div>
-                    <div class="security-card">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
-                            </svg>
-                        </div>
-                        <h3 data-i18n="security.card3_title">Infrastructure</h3>
-                        <p data-i18n="security.card3_desc">EIP-2612 Permit and EIP-3009 support for meta-transactions. Composable with smart contracts and on-chain logic for automated workflows.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ecosystem Section -->
-        <section class="ecosystem-section fade-in" id="ecosystem">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="ecosystem.title">UUSD Ecosystem</h2>
-                </div>
-                <div class="ecosystem-grid">
-                    <div class="ecosystem-category">
-                        <h3 data-i18n="ecosystem.ai_platforms">AI Platforms</h3>
-                        <div class="ecosystem-logos">
-                            <div class="eco-logo">AI Platform 1</div>
-                            <div class="eco-logo">AI Platform 2</div>
-                        </div>
-                    </div>
-                    <div class="ecosystem-category">
-                        <h3 data-i18n="ecosystem.defi">DeFi</h3>
-                        <div class="ecosystem-logos">
-                            <div class="eco-logo">DeFi 1</div>
-                            <div class="eco-logo">DeFi 2</div>
-                        </div>
-                    </div>
-                    <div class="ecosystem-category">
-                        <h3 data-i18n="ecosystem.liquidity">Liquidity</h3>
-                        <div class="ecosystem-logos">
-                            <div class="eco-logo">Liquidity 1</div>
-                            <div class="eco-logo">Liquidity 2</div>
-                        </div>
-                    </div>
-                    <div class="ecosystem-category">
-                        <h3 data-i18n="ecosystem.infrastructure">Infrastructure</h3>
-                        <div class="ecosystem-logos">
-                            <div class="eco-logo">Infra 1</div>
-                            <div class="eco-logo">Infra 2</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about-section fade-in" id="about">
-            <div class="container">
-                <div class="about-content">
-                    <h2 data-i18n="about.title">About Anything Labs</h2>
-                    <p data-i18n="about.p1">
-                        Anything Labs is building the financial infrastructure for the AI agent economy.
-                        We believe that as autonomous agents become primary economic participants, the tools
-                        they use to transact, settle, and store value must be purpose-built for speed,
-                        programmability, and global interoperability.
-                    </p>
-                    <p data-i18n="about.p2">
-                        UUSD is our foundational product -- a stablecoin designed from the ground up for AI-native commerce.
-                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Contract Info Section -->
-        <section class="contract-section fade-in" id="contract">
+        <section class="contract-section" id="contract">
             <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="contract.title">Contract Information</h2>
-                    <p data-i18n="contract.subtitle">Same address deployed across all supported networks</p>
+                <div class="section-header fade-in">
+                    <h2>Contract Information</h2>
+                    <p>Same address deployed across all supported networks</p>
                 </div>
 
-                <div class="contract-box">
-                    <div class="contract-label" data-i18n="contract.label">UUSD Contract Address</div>
+                <div class="contract-box fade-in">
+                    <div class="contract-label">UUSD Contract Address</div>
                     <div class="contract-address-wrapper">
                         <div class="contract-address">0x61a10E8556BEd032eA176330e7F17D6a12a10000</div>
                         <button class="copy-btn" title="Copy address">
@@ -327,7 +224,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="contract-note" data-i18n="contract.note">Deployed via CREATE2 for deterministic addresses across all EVM chains</div>
+                    <div class="contract-note">Deployed via CREATE2 for deterministic addresses across all EVM chains</div>
 
                     <div class="contract-links">
                         <a href="https://bscscan.com/token/0x61a10E8556BEd032eA176330e7F17D6a12a10000" target="_blank" class="explorer-btn">
@@ -346,7 +243,7 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M21.3 6.2l-9-5.2c-.2-.1-.4-.1-.6 0l-9 5.2c-.2.1-.4.4-.4.6v10.4c0 .3.1.5.4.6l9 5.2c.1.1.2.1.3.1s.2 0 .3-.1l9-5.2c.2-.1.4-.4.4-.6V6.8c0-.3-.1-.5-.4-.6zM12 4l6.9 4-2.8 1.6L12 7.2 7.9 9.6 5.1 8l6.9-4zm-7 5.5l6 3.5v6.9l-6-3.5v-6.9zm8 10.4v-6.9l6-3.5v6.9l-6 3.5z"/>
                             </svg>
-                            <span data-i18n="contract.add_metamask">Add to MetaMask</span>
+                            Add to MetaMask
                         </button>
                     </div>
                 </div>
@@ -354,17 +251,17 @@
         </section>
 
         <!-- Swap Section -->
-        <section class="swap-section fade-in" id="swap">
+        <section class="swap-section" id="swap">
             <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="swap.title">Get UUSD</h2>
-                    <p data-i18n="swap.subtitle">On-chain swaps are provided as a convenience for small transfers</p>
+                <div class="section-header fade-in">
+                    <h2>Get UUSD</h2>
+                    <p>On-chain swaps are provided as a convenience for small transfers</p>
                 </div>
 
-                <div class="swap-container">
+                <div class="swap-container fade-in">
                     <div class="swap-card">
                         <div class="swap-header">
-                            <h3 data-i18n="swap.header">Swap</h3>
+                            <h3>Swap</h3>
                             <div class="swap-settings">
                                 <button id="settings-btn" class="settings-btn" title="Settings">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -377,7 +274,7 @@
 
                         <!-- Slippage Settings -->
                         <div id="slippage-settings" class="slippage-settings">
-                            <div class="slippage-label" data-i18n="swap.slippage_label">Slippage Tolerance</div>
+                            <div class="slippage-label">Slippage Tolerance</div>
                             <div class="slippage-options">
                                 <button class="slippage-btn" data-value="0.1">0.1%</button>
                                 <button class="slippage-btn active" data-value="0.5">0.5%</button>
@@ -392,8 +289,8 @@
                         <!-- From Token -->
                         <div class="token-input-container">
                             <div class="token-input-header">
-                                <span data-i18n="swap.from">From</span>
-                                <span id="from-balance"><span data-i18n="swap.balance">Balance</span>: --</span>
+                                <span>From</span>
+                                <span id="from-balance">Balance: --</span>
                             </div>
                             <div class="token-input-row">
                                 <input type="number" id="from-amount" class="token-input" placeholder="0.0" min="0" step="any">
@@ -420,8 +317,8 @@
                         <!-- To Token -->
                         <div class="token-input-container">
                             <div class="token-input-header">
-                                <span data-i18n="swap.to">To</span>
-                                <span id="to-balance"><span data-i18n="swap.balance">Balance</span>: --</span>
+                                <span>To</span>
+                                <span id="to-balance">Balance: --</span>
                             </div>
                             <div class="token-input-row">
                                 <input type="number" id="to-amount" class="token-input" placeholder="0.0" readonly>
@@ -438,15 +335,15 @@
                         <!-- Swap Details -->
                         <div id="swap-details" class="swap-details" style="display: none;">
                             <div class="swap-detail-row">
-                                <span data-i18n="swap.rate">Rate</span>
+                                <span>Rate</span>
                                 <span id="swap-rate" class="swap-detail-value">--</span>
                             </div>
                             <div class="swap-detail-row">
-                                <span data-i18n="swap.min_received">Minimum Received</span>
+                                <span>Minimum Received</span>
                                 <span id="min-received" class="swap-detail-value">--</span>
                             </div>
                             <div class="swap-detail-row">
-                                <span data-i18n="swap.price_impact">Price Impact</span>
+                                <span>Price Impact</span>
                                 <span id="price-impact" class="swap-detail-value">--</span>
                             </div>
                         </div>
@@ -461,17 +358,17 @@
                         </div>
 
                         <!-- Connect Wallet Button -->
-                        <button id="connect-wallet-btn" class="btn btn-primary swap-btn" data-i18n="swap.connect_wallet">
+                        <button id="connect-wallet-btn" class="btn btn-primary swap-btn">
                             Connect Wallet
                         </button>
 
                         <!-- Swap Button -->
-                        <button id="swap-btn" class="btn btn-primary swap-btn" style="display: none;" data-i18n="swap.enter_amount">
+                        <button id="swap-btn" class="btn btn-primary swap-btn" style="display: none;">
                             Enter Amount
                         </button>
                     </div>
 
-                    <p class="text-muted text-center mt-4" style="font-size: 12px; color: var(--text-muted);" data-i18n="swap.note">
+                    <p class="text-muted text-center mt-4" style="font-size: 12px; color: var(--green-pale);">
                         Trading on PancakeSwap Infinity (LBAMM) via Universal Router. You will need BNB for gas fees.
                     </p>
                 </div>
@@ -483,7 +380,7 @@
     <div id="token-modal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
-                <h3 data-i18n="swap.select_token">Select Token</h3>
+                <h3>Select Token</h3>
                 <button id="token-modal-close" class="modal-close">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="6" x2="6" y2="18"/>
@@ -491,42 +388,43 @@
                     </svg>
                 </button>
             </div>
-            <div class="token-list" id="token-list"></div>
+            <div class="token-list" id="token-list">
+                <!-- Tokens will be populated dynamically -->
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="assets/logo.svg?v=20260309" alt="Anything Labs">
+                    <img src="assets/logo.svg?v=20260205" alt="Unity USD">
                 </div>
                 <div class="footer-links">
-                    <a href="https://uusd.ai/whitepaper.pdf" target="_blank" data-i18n="footer.docs">Docs</a>
-                    <a href="https://uusd.ai/whitepaper.pdf" target="_blank" data-i18n="footer.whitepaper">Whitepaper</a>
-                    <a href="#security" data-i18n="footer.security">Security</a>
-                    <a href="https://github.com/uusdai/uusd" target="_blank" data-i18n="footer.github">Github</a>
-                    <a href="mailto:contact@uusd.ai" data-i18n="footer.contact">Contact</a>
+                    <a href="https://bitcointalk.org/index.php?topic=5564031.msg65989162" target="_blank">Genesis</a>
+                    <a href="https://uusd.ai/whitepaper.pdf" target="_blank">Whitepaper</a>
+                    <a href="https://github.com/uusdai/uusd" target="_blank">GitHub</a>
+                    <a href="https://x.com/UUSDai" target="_blank">Twitter</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div class="copyright" data-i18n="footer.copyright">&copy; 2026 Anything Labs. All rights reserved.</div>
+                <div class="copyright">&copy; 2026 UUSD. All rights reserved.</div>
                 <div class="social-links">
                     <a href="https://x.com/UUSDai" target="_blank" title="Twitter">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://t.me/UUSD_ai" target="_blank" title="Telegram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                    </a>
                     <a href="https://github.com/uusdai/uusd" target="_blank" title="GitHub">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/UUSD_ai" target="_blank" title="Telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                         </svg>
                     </a>
                 </div>
@@ -535,14 +433,14 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/i18n.js?v=1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.9.0/ethers.umd.min.js"></script>
-    <script src="js/animations.js?v=6"></script>
-    <script src="js/hero-animation.js?v=6"></script>
-    <script src="js/wallet.js?v=8"></script>
-    <script src="js/swap.js?v=9"></script>
-    <script src="js/app.js?v=7"></script>
+    <script src="js/animations.js?v=5"></script>
+    <script src="js/hero-animation.js?v=5"></script>
+    <script src="js/wallet.js?v=6"></script>
+    <script src="js/swap.js?v=7"></script>
+    <script src="js/app.js?v=5"></script>
     <script>
+        // Initialize hero animation
         document.addEventListener('DOMContentLoaded', () => {
             new HeroAnimation('hero-canvas');
         });

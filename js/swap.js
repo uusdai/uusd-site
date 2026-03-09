@@ -197,7 +197,7 @@ class SwapManager {
             // Check if on BSC
             if (!wallet.isOnBSC()) {
                 if (swapBtn) {
-                    swapBtn.textContent = I18n.t('swap.switch_bsc');
+                    swapBtn.textContent = 'Switch to BSC';
                     swapBtn.disabled = false;
                 }
             } else {
@@ -240,7 +240,7 @@ class SwapManager {
         const fromBalance = await wallet.getBalance(fromToken.address);
         const fromBalanceEl = document.getElementById('from-balance');
         if (fromBalanceEl) {
-            fromBalanceEl.textContent = `${I18n.t('swap.balance')}: ${parseFloat(fromBalance).toFixed(6)}`;
+            fromBalanceEl.textContent = `Balance: ${parseFloat(fromBalance).toFixed(6)}`;
         }
 
         // Update to token balance
@@ -248,7 +248,7 @@ class SwapManager {
         const toBalance = await wallet.getBalance(toToken.address);
         const toBalanceEl = document.getElementById('to-balance');
         if (toBalanceEl) {
-            toBalanceEl.textContent = `${I18n.t('swap.balance')}: ${parseFloat(toBalance).toFixed(6)}`;
+            toBalanceEl.textContent = `Balance: ${parseFloat(toBalance).toFixed(6)}`;
         }
     }
 
@@ -468,36 +468,36 @@ class SwapManager {
         if (!swapBtn) return;
 
         if (!wallet.isConnected) {
-            swapBtn.textContent = I18n.t('swap.connect_wallet');
+            swapBtn.textContent = 'Connect Wallet';
             swapBtn.disabled = true;
             return;
         }
 
         if (!wallet.isOnBSC()) {
-            swapBtn.textContent = I18n.t('swap.switch_bsc');
+            swapBtn.textContent = 'Switch to BSC';
             swapBtn.disabled = false;
             return;
         }
 
         if (!this.fromAmount || parseFloat(this.fromAmount) <= 0) {
-            swapBtn.textContent = I18n.t('swap.enter_amount');
+            swapBtn.textContent = 'Enter Amount';
             swapBtn.disabled = true;
             return;
         }
 
         if (this.isLoading) {
-            swapBtn.textContent = I18n.t('swap.loading');
+            swapBtn.textContent = 'Loading...';
             swapBtn.disabled = true;
             return;
         }
 
         if (!this.toAmount) {
-            swapBtn.textContent = I18n.t('swap.invalid_pair');
+            swapBtn.textContent = 'Invalid Pair';
             swapBtn.disabled = true;
             return;
         }
 
-        swapBtn.textContent = I18n.t('swap.swap');
+        swapBtn.textContent = 'Swap';
         swapBtn.disabled = false;
     }
 
@@ -521,7 +521,7 @@ class SwapManager {
 
         try {
             swapBtn.disabled = true;
-            swapBtn.innerHTML = `<span class="spinner"></span> ${I18n.t('swap.processing')}`;
+            swapBtn.innerHTML = '<span class="spinner"></span> Processing...';
 
             if (!this.isSupportedPair()) {
                 throw new Error('Only USDT <-> UUSD is supported on this page currently.');
@@ -540,11 +540,11 @@ class SwapManager {
             const deadline = Math.floor(Date.now() / 1000) + (this.deadline * 60);
 
             // 1) Ensure ERC20 approval to Permit2 (one-time per token)
-            showTxStatus('pending', I18n.t('swap.tx_approving'));
+            showTxStatus('pending', 'Approving token for Permit2 (if needed)...');
             await this.ensurePermit2TokenApproval(fromToken.address, amountIn);
 
             // 2) Build Permit2 permit signature for Universal Router
-            showTxStatus('pending', I18n.t('swap.tx_signing'));
+            showTxStatus('pending', 'Signing Permit2 message...');
             const permit2 = new ethers.Contract(CONTRACTS.PERMIT2, PERMIT2_ABI, provider);
             const permitState = await permit2.allowance(wallet.address, fromToken.address, CONTRACTS.INFINITY_UNIVERSAL_ROUTER);
             const nonce = permitState.nonce;
@@ -630,16 +630,16 @@ class SwapManager {
 
             const universalRouter = new ethers.Contract(CONTRACTS.INFINITY_UNIVERSAL_ROUTER, UNIVERSAL_ROUTER_ABI, wallet.signer);
 
-            showTxStatus('pending', I18n.t('swap.tx_confirming'));
+            showTxStatus('pending', 'Waiting for confirmation...');
             const tx = await universalRouter.execute(commands, [permitInput, infiPayload], deadline);
 
-            showTxStatus('pending', `${I18n.t('swap.tx_submitted')} ${tx.hash.slice(0, 10)}...`);
+            showTxStatus('pending', `Transaction submitted: ${tx.hash.slice(0, 10)}...`);
 
             // Wait for confirmation
             const receipt = await tx.wait();
 
             if (receipt.status === 1) {
-                showTxStatus('success', `${I18n.t('swap.tx_success')} <a href="https://bscscan.com/tx/${tx.hash}" target="_blank">${I18n.t('swap.tx_view')}</a>`);
+                showTxStatus('success', `Swap successful! <a href="https://bscscan.com/tx/${tx.hash}" target="_blank">View on BSCScan</a>`);
 
                 // Reset form
                 this.fromAmount = '';
@@ -651,7 +651,7 @@ class SwapManager {
                 // Update balances
                 this.updateBalances();
             } else {
-                showTxStatus('error', I18n.t('swap.tx_failed'));
+                showTxStatus('error', 'Transaction failed');
             }
 
         } catch (error) {
@@ -813,7 +813,7 @@ function showTxStatus(status, message) {
 function getShortErrorMessage(error) {
     // Standard user rejection codes
     if (error?.code === 'ACTION_REJECTED' || error?.code === 4001) {
-        return I18n.t('error.user_rejected');
+        return '用户拒绝了请求';
     }
 
     const candidates = [
@@ -826,7 +826,7 @@ function getShortErrorMessage(error) {
     ];
 
     let msg = candidates.find((m) => typeof m === 'string' && m.trim());
-    if (!msg) return I18n.t('error.tx_failed');
+    if (!msg) return '交易失败';
 
     msg = msg.trim();
 
@@ -840,9 +840,9 @@ function getShortErrorMessage(error) {
     msg = msg.replace(/^execution reverted:\s*/i, '').trim();
 
     const lower = msg.toLowerCase();
-    if (lower.includes('user reject') || lower.includes('user rejected')) return I18n.t('error.user_rejected');
-    if (lower.includes('insufficient funds')) return I18n.t('error.insufficient_gas');
-    if (lower.includes('nonce too low')) return I18n.t('error.nonce_low');
+    if (lower.includes('user reject') || lower.includes('user rejected')) return '用户拒绝了请求';
+    if (lower.includes('insufficient funds')) return '余额不足以支付 Gas';
+    if (lower.includes('nonce too low')) return 'Nonce 太低（请稍后重试）';
 
     // Keep it short for UI
     if (msg.length > 140) msg = msg.slice(0, 140);

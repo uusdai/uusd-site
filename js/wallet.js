@@ -156,7 +156,7 @@ class WalletManager {
         try {
             if (!window.ethereum) {
                 if (!silent) {
-                    alert(I18n.t('wallet.install_prompt'));
+                    alert('Please install MetaMask or another Web3 wallet to continue.');
                 }
                 return false;
             }
@@ -188,7 +188,7 @@ class WalletManager {
         } catch (error) {
             console.error('Connection error:', error);
             if (!silent) {
-                alert(I18n.t('wallet.connect_failed') + ' ' + error.message);
+                alert('Failed to connect wallet: ' + error.message);
             }
             return false;
         }

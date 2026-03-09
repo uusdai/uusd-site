@@ -15,13 +15,13 @@ class HeroAnimation {
         this.mouseX = 0;
         this.mouseY = 0;
 
-        // Colors - Institutional blue palette
+        // Colors
         this.colors = {
-            primary: '#2563eb',
-            secondary: '#4f46e5',
-            medium: '#6366f1',
-            light: '#a5b4fc',
-            pale: '#c7d2fe',
+            greenDark: '#1a3d1a',
+            greenPrimary: '#2d5016',
+            greenMedium: '#4a7c23',
+            greenLight: '#8b9a6d',
+            greenPale: '#a8b892',
             gold: '#c9a227',
             goldLight: '#d4b84a'
         };
@@ -95,13 +95,13 @@ class HeroAnimation {
                 vy: (Math.random() - 0.5) * 0.5 + 0.3,
                 radius: 1.5 + Math.random() * 3,
                 opacity: 0.15 + Math.random() * 0.25,
-                color: Math.random() > 0.3 ? this.colors.medium : this.colors.gold
+                color: Math.random() > 0.3 ? this.colors.greenMedium : this.colors.gold
             });
         }
     }
 
     drawEngravingLines() {
-        this.ctx.strokeStyle = this.colors.primary;
+        this.ctx.strokeStyle = this.colors.greenPrimary;
 
         for (let y = 0; y < this.canvas.height; y += 4) {
             const wave = Math.sin(y * 0.01 + this.frameCount * 0.01) * 0.5;
@@ -137,11 +137,11 @@ class HeroAnimation {
             this.ctx.textBaseline = 'middle';
 
             if (symbol.char === '$' || symbol.char === 'U') {
-                this.ctx.fillStyle = this.colors.primary;
+                this.ctx.fillStyle = this.colors.greenPrimary;
             } else if (symbol.char === '₿' || symbol.char === '∞') {
                 this.ctx.fillStyle = this.colors.gold;
             } else {
-                this.ctx.fillStyle = this.colors.medium;
+                this.ctx.fillStyle = this.colors.greenMedium;
             }
 
             this.ctx.fillText(symbol.char, 0, 0);
@@ -187,7 +187,7 @@ class HeroAnimation {
     drawConnections() {
         const connectionDist = 100;
 
-        this.ctx.strokeStyle = this.colors.light;
+        this.ctx.strokeStyle = this.colors.greenLight;
         this.ctx.lineWidth = 0.5;
 
         for (let i = 0; i < this.particles.length; i++) {
@@ -218,7 +218,7 @@ class HeroAnimation {
                 : this.canvas.width - 30 - (i - streamCount / 2) * 25;
 
             this.ctx.globalAlpha = 0.08;
-            this.ctx.strokeStyle = this.colors.medium;
+            this.ctx.strokeStyle = this.colors.greenMedium;
             this.ctx.lineWidth = 1;
 
             this.ctx.beginPath();
@@ -247,9 +247,9 @@ class HeroAnimation {
             this.canvas.width / 2, this.canvas.height / 2, 0,
             this.canvas.width / 2, this.canvas.height / 2, this.canvas.width * 0.4
         );
-        gradient.addColorStop(0, 'rgba(248, 249, 252, 0.4)');
-        gradient.addColorStop(0.5, 'rgba(248, 249, 252, 0.1)');
-        gradient.addColorStop(1, 'rgba(248, 249, 252, 0)');
+        gradient.addColorStop(0, 'rgba(248, 246, 240, 0.4)');
+        gradient.addColorStop(0.5, 'rgba(248, 246, 240, 0.1)');
+        gradient.addColorStop(1, 'rgba(248, 246, 240, 0)');
 
         this.ctx.globalAlpha = 1;
         this.ctx.fillStyle = gradient;
@@ -259,7 +259,7 @@ class HeroAnimation {
     animate() {
         this.frameCount++;
 
-        this.ctx.fillStyle = '#f8f9fc';
+        this.ctx.fillStyle = '#f8f6f0';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.drawEngravingLines();

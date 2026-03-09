@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initAnimations();
     }
 
-    // Initialize i18n
-    if (window.I18n) {
-        window.I18n.init();
-    }
-
     // Initialize copy functionality
     initCopyButtons();
 
@@ -37,7 +32,7 @@ function initCopyButtons() {
             const address = document.querySelector('.contract-address').textContent;
             try {
                 await navigator.clipboard.writeText(address);
-                showToast(I18n.t('toast.copied'));
+                showToast('Address copied to clipboard!');
             } catch (err) {
                 // Fallback for older browsers
                 const textArea = document.createElement('textarea');
@@ -46,7 +41,7 @@ function initCopyButtons() {
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                showToast(I18n.t('toast.copied'));
+                showToast('Address copied to clipboard!');
             }
         });
     }
@@ -58,7 +53,7 @@ function initAddToMetaMask() {
     if (addBtn) {
         addBtn.addEventListener('click', async () => {
             if (!window.ethereum) {
-                showToast(I18n.t('wallet.install_metamask'));
+                showToast('Please install MetaMask first');
                 return;
             }
 
@@ -75,10 +70,10 @@ function initAddToMetaMask() {
                         }
                     }
                 });
-                showToast(I18n.t('wallet.added_metamask'));
+                showToast('UUSD added to MetaMask!');
             } catch (error) {
                 if (error.code !== 4001) {
-                    showToast(I18n.t('wallet.add_failed'));
+                    showToast('Failed to add token');
                 }
             }
         });
@@ -153,7 +148,7 @@ function updateConnectedState(address) {
 function updateDisconnectedState() {
     const headerWalletBtn = document.querySelector('.nav-cta .btn-primary');
     if (headerWalletBtn) {
-        headerWalletBtn.textContent = I18n.t('nav.get_uusd');
+        headerWalletBtn.textContent = 'Get UUSD';
         headerWalletBtn.classList.remove('connected');
     }
 }
@@ -175,8 +170,8 @@ function showToast(message, duration = 3000) {
         bottom: 24px;
         left: 50%;
         transform: translateX(-50%);
-        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-        color: #ffffff;
+        background: linear-gradient(135deg, #00f5ff 0%, #b14aed 100%);
+        color: #0a0a0f;
         padding: 12px 24px;
         border-radius: 8px;
         font-size: 14px;
@@ -227,8 +222,8 @@ toastStyles.textContent = `
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(10, 10, 15, 0.98);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding: 24px;
             gap: 16px;
         }
