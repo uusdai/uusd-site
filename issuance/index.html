@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get UUSD — Access UUSD Across Supported EVM Networks</title>
-    <meta name="description" content="Access UUSD via supported decentralized exchanges or direct institutional allocation. View canonical contract addresses across BNB Chain, Ethereum, and Base." />
-    <link rel="canonical" href="https://uusd.ai/get" />
+    <title>Launch Stablecoins on UUSD Infrastructure</title>
+    <meta name="description" content="Anything Labs partners with institutions to launch compliant on-chain stablecoins on UUSD infrastructure — audited contracts, upgradeable proxy, multisig custody." />
+    <link rel="canonical" href="https://uusd.ai/issuance" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -76,20 +76,20 @@
     <!-- Open Graph / Telegram -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="UUSD" />
-    <meta property="og:title" content="Get UUSD — Access UUSD Across Supported EVM Networks" />
-    <meta property="og:description" content="Access UUSD through supported decentralized exchanges or institutional allocation channels. Canonical CREATE2 contract address across BNB Chain, Ethereum, and Base." />
+    <meta property="og:title" content="Launch Stablecoins on UUSD Infrastructure" />
+    <meta property="og:description" content="Institutional issuance on shared, audited UUSD infrastructure. Upgradeable proxy, EIP-2612 and EIP-3009 standards, pausable controls, and Safe multisig custody." />
     <meta property="og:image" content="https://uusd.ai/images/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="UUSD | The Stablecoin Network for Global Assets" />
-    <meta property="og:url" content="https://uusd.ai/get" />
+    <meta property="og:url" content="https://uusd.ai/issuance" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@UUSDai" />
-    <meta name="twitter:title" content="Get UUSD — Access UUSD Across Supported EVM Networks" />
-    <meta name="twitter:description" content="Access UUSD through supported decentralized exchanges or institutional allocation channels. Canonical CREATE2 contract address across BNB Chain, Ethereum, and Base." />
+    <meta name="twitter:title" content="Launch Stablecoins on UUSD Infrastructure" />
+    <meta name="twitter:description" content="Institutional issuance on shared, audited UUSD infrastructure. Upgradeable proxy, EIP-2612 and EIP-3009 standards, pausable controls, and Safe multisig custody." />
     <meta name="twitter:image" content="https://uusd.ai/images/og-image.png" />
     <meta name="twitter:image:alt" content="UUSD | The Stablecoin Network for Global Assets" />
 
@@ -101,27 +101,41 @@
     <div id="root">
       <main>
         <section>
-          <h1>Get UUSD</h1>
-          <p>UUSD is available through supported decentralized venues and direct institutional channels. The canonical contract address is identical on every EVM network UUSD has been deployed to.</p>
+          <h1>Launch Stablecoins on UUSD Infrastructure</h1>
+          <p>UUSD provides the contract standards, deployment tooling, and governance patterns required to launch institutional-grade on-chain dollar products. Anything Labs partners directly with issuing institutions to deploy and operate compliant stablecoins on shared infrastructure.</p>
         </section>
         <section>
-          <h2>Access on DEX</h2>
-          <p>UUSD is currently tradable against USDT on BNB Chain via the PancakeSwap Infinity liquidity system.</p>
-          <a href="https://pancakeswap.finance/swap?chain=bsc&outputCurrency=0x61a10e8556bed032ea176330e7f17d6a12a10000&inputCurrency=0x55d398326f99059fF775485246999027B3197955">PancakeSwap — USDT to UUSD</a>
-        </section>
-        <section>
-          <h2>Institutional Access</h2>
-          <p>Crypto platforms, funds, treasury desks, and infrastructure partners can engage Anything Labs directly for large-size allocations, listing support, and integration discussions.</p>
-          <a href="mailto:contact@uusd.ai">Contact the UUSD team</a>
-        </section>
-        <section>
-          <h2>Canonical Contract Address</h2>
-          <p>0x61a10E8556BEd032eA176330e7F17D6a12a10000</p>
-          <p>Deployed via CREATE2 so the address is identical on every supported EVM chain. BNB Chain is currently active. Ethereum and Base deployments are in a paused state while the network is staged.</p>
+          <h2>What Issuance on UUSD Includes</h2>
           <ul>
-            <li><a href="https://bscscan.com/token/0x61a10E8556BEd032eA176330e7F17D6a12a10000">UUSD on BscScan</a></li>
-            <li><a href="https://etherscan.io/token/0x61a10E8556BEd032eA176330e7F17D6a12a10000">UUSD on Etherscan</a></li>
-            <li><a href="https://basescan.org/token/0x61a10E8556BEd032eA176330e7F17D6a12a10000">UUSD on BaseScan</a></li>
+            <li>Audited contract codebase, reviewed by SlowMist</li>
+            <li>TransparentUpgradeableProxy pattern for safe, governed upgrades</li>
+            <li>Separation of Owner, Admin, and Minter roles with least-privilege controls</li>
+            <li>Deterministic CREATE2 deployment for consistent multi-chain addresses</li>
+            <li>Safe multisig custody of Owner and ProxyAdmin keys</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contract Standards</h2>
+          <ul>
+            <li>ERC-20 with 18 decimals</li>
+            <li>EIP-2612 Permit for gasless approvals</li>
+            <li>EIP-3009 TransferWithAuthorization for authorized off-chain signed transfers</li>
+            <li>Batch transfers — up to 200 recipients per transaction</li>
+            <li>Freeze/unfreeze at the account level for compliance controls</li>
+            <li>Global pause/unpause for emergency response</li>
+            <li>Ownable2Step for safer ownership transitions</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Who This Is For</h2>
+          <p>Financial institutions, exchanges, regulated fintechs, and infrastructure partners seeking to deploy on-chain dollar products without rebuilding core stablecoin contracts, governance, or operational tooling.</p>
+          <a href="mailto:contact@uusd.ai">Request an issuance briefing</a>
+        </section>
+        <section>
+          <h2>References</h2>
+          <ul>
+            <li><a href="https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/UUSD%20-%20SlowMist%20Audit%20Report.pdf">SlowMist audit report</a></li>
+            <li><a href="https://bscscan.com/token/0x61a10E8556BEd032eA176330e7F17D6a12a10000">Reference contract on BscScan</a></li>
           </ul>
         </section>
       </main>
